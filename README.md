@@ -1,609 +1,903 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>IoT Dashboard — ESP32 + DHT11</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet"/>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#020812;--bg2:#060f1e;--bg3:#0a1628;
-  --border:#0d2040;--glow:#00d4ff;--green:#00ff88;
-  --orange:#ff6b35;--purple:#a855f7;--warn:#ffb700;
-  --text:#c8daf0;--muted:#3a5a7a;
-  --font-display:'Orbitron',monospace;
-  --font-mono:'Share Tech Mono',monospace;
-  --font-body:'Exo 2',sans-serif;
+<div align="center">
+
+```
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║        ·  ·  ·  ·  ◌  ─────────────  ◌  ·  ·  ·  ·         ║
+║     ·              ◌                  ◌              ·        ║
+║   ·             ◌    ANCIENT  ROME      ◌             ·       ║
+║  ·           ◌                             ◌           ·      ║
+║  ·          ◌                               ◌          ·      ║
+║  ·         ◌    ╔═══════════════════════╗    ◌         ·      ║
+║  ·          ◌   ║  C · H · R · O · N   ║   ◌          ·      ║
+║  ·           ◌  ║  · · O · S · · · ·   ║  ◌           ·      ║
+║   ·             ╚═══════════════════════╝             ·       ║
+║     ·              ◌    BELLE  ÉPOQUE  ◌              ·       ║
+║        ·  ·  ·  ·  ◌  ─────────────  ◌  ·  ·  ·  ·         ║
+║                                                               ║
+║          L U X U R Y   T E M P O R A L   T R A V E L         ║
+╚═══════════════════════════════════════════════════════════════╝
+```
+
+# ⟳ &nbsp; CHRONOS — Time Machine
+
+> *"The present is merely a convention. We offer the entire continuum."*
+
+&nbsp;
+
+[![Made With Love](https://img.shields.io/badge/Made%20With-Love%20%26%20Vanilla%20JS-c9a84c?style=for-the-badge&labelColor=0a0806)](https://github.com)
+[![HTML5](https://img.shields.io/badge/HTML5-Pure-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=0a0806)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-Vanilla-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=0a0806)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black&labelColor=0a0806)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+&nbsp;
+
+[![Version](https://img.shields.io/badge/version-2.0.0-c9a84c?style=flat-square&labelColor=0a0806)](https://github.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-c9a84c?style=flat-square&labelColor=0a0806)](LICENSE)
+[![Zero Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square&labelColor=0a0806)](package.json)
+[![Single File](https://img.shields.io/badge/build-single%20file-c9a84c?style=flat-square&labelColor=0a0806)](index.html)
+[![Deploy Ready](https://img.shields.io/badge/deploy-ready-c9a84c?style=flat-square&labelColor=0a0806)](https://vercel.com)
+
+&nbsp;
+
+**A luxury temporal travel agency website — built with pure HTML, CSS & JavaScript.**
+**No frameworks. No dependencies. No build steps. Just time.**
+
+&nbsp;
+
+[🚀 Live Demo](#-getting-started) &nbsp;·&nbsp; [🐛 Report Bug](../../issues) &nbsp;·&nbsp; [✨ Request Feature](../../issues)
+
+</div>
+
+---
+
+<div align="center">
+
+### ⟳ &nbsp; The clock is always running. &nbsp; ⟳
+
+</div>
+
+---
+
+## 📋 &nbsp; Table of Contents
+
+- [About The Project](#-about-the-project)
+- [Feature Highlights](#-feature-highlights)
+- [All Animations Documented](#-all-animations-documented)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Deployment](#-deployment)
+- [Sections Overview](#-sections-overview)
+- [Design System](#-design-system)
+- [Customization Guide](#-customization-guide)
+- [Browser Support](#-browser-support)
+- [Performance](#-performance)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🕰️ &nbsp; About The Project
+
+**CHRONOS** is a fully hand-crafted, single-file luxury landing page for a fictional temporal travel agency. It demonstrates everything possible with **zero dependencies** — no React, no Tailwind, no Vite, no bundler. One `.html` file. Open it. It works.
+
+The design language draws from **Swiss haute horlogerie** — obsessive precision, gold-on-dark palette, mechanical motion, and the quiet confidence of a brand that has existed before you were born.
+
+```
+   Philosophy     →    Every animation has a reason
+   Typography     →    Three fonts. Each with a role
+   Color          →    Gold. Cream. Dark. Nothing else needs to exist
+   Motion         →    15+ distinct animation systems running simultaneously
+   Code           →    ~1,500 lines. One file. Zero build steps
+```
+
+This project is a reference for:
+- 🎨 Advanced CSS animation techniques (keyframes, custom properties, transforms)
+- 🖱️ Vanilla JS interaction patterns (cursor, observer, drag, parallax)
+- 🏗️ Luxury web design layout systems
+- ⚡ Single-file deployable architecture
+
+---
+
+## ✨ &nbsp; Feature Highlights
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎬 Animations
+- Page loader with spinning rings
+- Smooth sweeping clock hands (50ms)
+- 110-particle twinkling star field
+- 60-mark tick ring rotation
+- Floating era orbit labels
+- Scroll progress bar
+- Ring parallax on scroll
+- Mouse-tracking bento glow
+- Count-up statistics
+- Staggered scroll reveals
+- Loader bar sweep
+- Hero glow pulse
+- Scroll-drop line indicator
+- Marquee tape scroll
+- News ticker feed
+
+</td>
+<td width="50%">
+
+### 🖱️ Interactions
+- Custom gold cursor dot
+- Lagging cursor ring
+- Cursor expands on hover
+- Nav blur on scroll
+- Draggable horizontal timeline
+- Link underline slide
+- Card arrow reveal
+- Destination card hover lift
+- Timeline dot fill on hover
+- Bento card bg shift
+- Stat cell bottom border
+- Form input border glow
+- Button wipe-fill animation
+- Testimonial card deepen
+- Footer link color shift
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🎞️ &nbsp; All Animations Documented
+
+> Every animation in the project — what it does, how it works, and the code behind it.
+
+---
+
+### 1. &nbsp; Page Loader
+
+Three concentric rings spin in alternating directions while a gold sweep bar indicates loading progress. Fades out after `2600ms`.
+
+```
+  ◌ ────── rotating rings ────── ◌
+        ●  loader dot center
+  ════════ sweep bar ════════════
+  Calibrating Temporal Coordinates…
+```
+
+```css
+/* Ring spin keyframe — all three reuse this */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-weight:300;overflow-x:hidden;line-height:1.7}
 
-/_ ── Scanline overlay ── _/
-body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,212,255,.012) 2px,rgba(0,212,255,.012) 4px);pointer-events:none;z-index:9999}
-
-/_ ── Grid bg ── _/
-body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0}
-
-/_ ── Animations ── _/
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@keyframes flicker{0%,100%{opacity:1}92%{opacity:1}93%{opacity:.4}94%{opacity:1}96%{opacity:.6}97%{opacity:1}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,.4)}70%{box-shadow:0 0 0 10px rgba(0,212,255,0)}}
-@keyframes scanline{0%{top:-10%}100%{top:110%}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-@keyframes travel{0%{left:-60px;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:100%;opacity:0}}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes glow-pulse{0%,100%{text-shadow:0 0 10px var(--glow),0 0 20px var(--glow)}50%{text-shadow:0 0 20px var(--glow),0 0 40px var(--glow),0 0 60px var(--glow)}}
-@keyframes bar-fill{from{width:0}to{width:var(--w)}}
-@keyframes count-up{from{opacity:0}to{opacity:1}}
-
-.fade-up{opacity:0;animation:fadeUp .7s ease forwards}
-.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}.d5{animation-delay:.5s}.d6{animation-delay:.6s}.d7{animation-delay:.7s}.d8{animation-delay:.8s}
-
-/_ ── Layout ── _/
-.wrap{max-width:980px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
-
-/_ ── Hero ── _/
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:60px 24px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);border-radius:20px;padding:6px 16px;font-family:var(--font-mono);font-size:11px;color:var(--glow);margin-bottom:28px;letter-spacing:2px}
-.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
-.hero-title{font-family:var(--font-display);font-size:clamp(32px,6vw,72px);font-weight:900;line-height:1.1;margin-bottom:16px;animation:glow-pulse 3s ease-in-out infinite,fadeUp .8s ease forwards;color:#fff;letter-spacing:2px}
-.hero-title span{color:var(--glow)}
-.hero-sub{font-size:clamp(14px,2vw,18px);color:var(--muted);max-width:560px;margin-bottom:40px;animation:fadeUp .8s ease .2s forwards;opacity:0}
-.hero-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;animation:fadeUp .8s ease .4s forwards;opacity:0}
-.tag{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:6px 14px;font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:1px}
-.tag.green{border-color:rgba(0,255,136,.3);color:var(--green);background:rgba(0,255,136,.04)}
-.tag.orange{border-color:rgba(255,107,53,.3);color:var(--orange);background:rgba(255,107,53,.04)}
-.tag.purple{border-color:rgba(168,85,247,.3);color:var(--purple);background:rgba(168,85,247,.04)}
-.tag.blue{border-color:rgba(0,212,255,.3);color:var(--glow);background:rgba(0,212,255,.04)}
-
-/_ ── Section ── _/
-section{padding:80px 0}
-.sec-label{font-family:var(--font-mono);font-size:10px;color:var(--glow);letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
-.sec-label::before{content:'';width:24px;height:1px;background:var(--glow)}
-.sec-title{font-family:var(--font-display);font-size:clamp(22px,4vw,36px);font-weight:700;color:#fff;margin-bottom:40px;line-height:1.2}
-
-/_ ── Data flow animation ── _/
-.flow-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:32px 24px;margin-bottom:16px;overflow:hidden}
-.flow-row{display:flex;align-items:center;gap:0;margin:14px 0}
-.flow-node{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:10px 16px;text-align:center;flex-shrink:0;min-width:110px}
-.flow-node .fn-label{font-size:9px;font-family:var(--font-mono);color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
-.flow-node .fn-name{font-size:13px;font-weight:600;font-family:var(--font-display)}
-.flow-node .fn-ip{font-size:9px;font-family:var(--font-mono);color:var(--muted);margin-top:2px}
-.flow-wire{flex:1;height:3px;background:var(--border);position:relative;overflow:visible;margin:0 4px}
-.packet{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;font-family:var(--font-mono);font-weight:700;animation:travel 2.2s linear infinite}
-.packet2{animation-delay:1.1s}
-
-/_ ── Cards grid ── _/
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:16px}
-.card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;position:relative;overflow:hidden;transition:border-color .3s,transform .2s}
-.card:hover{border-color:rgba(0,212,255,.3);transform:translateY(-3px)}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:2px}
-.card.c-green::before{background:linear-gradient(90deg,var(--green),#00a86b)}
-.card.c-orange::before{background:linear-gradient(90deg,var(--orange),#ff9500)}
-.card.c-blue::before{background:linear-gradient(90deg,var(--glow),#0088ff)}
-.card.c-purple::before{background:linear-gradient(90deg,var(--purple),#7c3aed)}
-.card-icon{font-size:24px;margin-bottom:12px}
-.card-title{font-family:var(--font-display);font-size:14px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:1px}
-.card-desc{font-size:13px;color:var(--muted);line-height:1.6}
-
-/_ ── Steps ── _/
-.steps{display:flex;flex-direction:column;gap:0}
-.step{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--border);position:relative}
-.step:last-child{border-bottom:none}
-.step-num{font-family:var(--font-display);font-size:11px;font-weight:900;color:var(--glow);background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.2);border-radius:8px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.step-body{flex:1}
-.step-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px;font-family:var(--font-body)}
-.step-desc{font-size:13px;color:var(--muted);line-height:1.6}
-.step-desc a{color:var(--glow);text-decoration:none}
-.step-desc a:hover{text-decoration:underline}
-
-/_ ── Code block ── _/
-.code-wrap{background:#020c18;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:10px 0}
-.code-bar{background:var(--bg3);border-bottom:1px solid var(--border);padding:8px 14px;display:flex;align-items:center;justify-content:space-between}
-.code-dots{display:flex;gap:6px}
-.code-dots span{width:10px;height:10px;border-radius:50%}
-.code-lang{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:1px}
-pre{padding:18px;font-family:var(--font-mono);font-size:12px;line-height:1.7;overflow-x:auto;color:#7ab8d4}
-pre .k{color:var(--purple)}
-pre .s{color:var(--green)}
-pre .c{color:var(--muted)}
-pre .n{color:var(--orange)}
-pre .p{color:var(--glow)}
-
-/_ ── Table ── _/
-.tbl-wrap{overflow-x:auto;margin:10px 0}
-table{width:100%;border-collapse:collapse;font-size:13px;font-family:var(--font-mono)}
-th{background:var(--bg3);border:1px solid var(--border);padding:10px 14px;text-align:left;font-size:10px;color:var(--glow);text-transform:uppercase;letter-spacing:1px;font-weight:400}
-td{border:1px solid var(--border);padding:10px 14px;color:var(--text)}
-tr:hover td{background:rgba(0,212,255,.03)}
-.td-green{color:var(--green)}
-.td-orange{color:var(--orange)}
-.td-red{color:#ff3c3c}
-
-/_ ── Wire diagram ── _/
-.circuit{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:28px;font-family:var(--font-mono);font-size:12px}
-.pin-row{display:flex;align-items:center;gap:12px;margin:8px 0}
-.pin-dht{background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.3);color:var(--green);padding:4px 12px;border-radius:5px;min-width:80px;text-align:center}
-.pin-arrow{color:var(--muted);flex:1;text-align:center;position:relative}
-.pin-arrow::before,.pin-arrow::after{content:'';position:absolute;top:50%;height:1px;background:var(--border);width:40%}
-.pin-arrow::before{left:0}.pin-arrow::after{right:0}
-.pin-esp{padding:4px 12px;border-radius:5px;min-width:80px;text-align:center}
-.pin-33{background:rgba(255,183,0,.1);border:1px solid rgba(255,183,0,.3);color:var(--warn)}
-.pin-gnd{background:rgba(88,88,88,.2);border:1px solid #444;color:#888}
-.pin-gpio{background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);color:var(--glow)}
-.resistor-note{background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);border-radius:8px;padding:10px 14px;color:var(--purple);font-size:11px;margin-top:14px;display:flex;align-items:center;gap:8px}
-
-/_ ── Troubleshoot ── _/
-.trouble-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin:8px 0;display:flex;gap:14px;align-items:flex-start}
-.trouble-icon{font-size:18px;flex-shrink:0;margin-top:1px}
-.trouble-prob{font-size:13px;color:#ff3c3c;font-weight:600;margin-bottom:4px;font-family:var(--font-mono)}
-.trouble-fix{font-size:12px;color:var(--muted);line-height:1.5}
-.trouble-fix code{color:var(--green);background:rgba(0,255,136,.08);padding:1px 5px;border-radius:3px}
-
-/_ ── API endpoints ── _/
-.endpoint{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;margin:6px 0;font-family:var(--font-mono);font-size:12px}
-.method{padding:3px 10px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:1px;min-width:46px;text-align:center}
-.method.post{background:rgba(255,107,53,.15);border:1px solid rgba(255,107,53,.3);color:var(--orange)}
-.method.get{background:rgba(0,255,136,.1);border:1px solid rgba(0,255,136,.25);color:var(--green)}
-.ep-path{color:var(--glow)}
-.ep-desc{color:var(--muted);font-size:11px;margin-left:auto}
-
-/_ ── Footer ── _/
-footer{border-top:1px solid var(--border);padding:40px 0;text-align:center}
-.footer-logo{font-family:var(--font-display);font-size:20px;font-weight:900;color:var(--glow);letter-spacing:3px;margin-bottom:10px;animation:glow-pulse 3s ease-in-out infinite}
-.footer-sub{font-size:12px;color:var(--muted);font-family:var(--font-mono)}
-
-/_ ── Divider ── _/
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:20px 0}
-
-/_ ── Cursor blink ── _/
-.cursor::after{content:'█';animation:blink 1s step-end infinite;color:var(--glow);font-size:.8em}
-</style>
-
-</head>
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge fade-up d1"><div class="live-dot"></div>ESP32 · DHT11 · MongoDB Atlas · React Vite</div>
-  <h1 class="hero-title">IoT <span>Dashboard</span></h1>
-  <p class="hero-sub fade-up d2">Real-time temperature & humidity monitoring system. Sensor data flows from your ESP32 through WiFi → Express API → MongoDB Atlas → live React dashboard.</p>
-  <div class="hero-tags">
-    <span class="tag green">Node.js Backend</span>
-    <span class="tag orange">Arduino C++</span>
-    <span class="tag blue">React + Vite</span>
-    <span class="tag purple">MongoDB Atlas</span>
-    <span class="tag">Recharts</span>
-    <span class="tag">DHT11 Sensor</span>
-  </div>
-</div>
-
-<div class="wrap">
-
-<!-- HOW IT CONNECTS -->
-<section class="fade-up d2">
-  <div class="sec-label">Architecture</div>
-  <div class="sec-title">How it connects<span class="cursor"></span></div>
-
-  <div class="flow-wrap">
-    <div class="flow-row">
-      <div class="flow-node" style="border-color:rgba(0,255,136,.3)">
-        <div class="fn-label">sensor</div>
-        <div class="fn-name" style="color:var(--green)">DHT11</div>
-        <div class="fn-ip">GPIO4</div>
-      </div>
-      <div class="flow-wire" style="background:rgba(0,255,136,.3)">
-        <div class="packet" style="background:var(--green);color:#000">DATA</div>
-        <div class="packet packet2" style="background:var(--green);color:#000">DATA</div>
-      </div>
-      <div class="flow-node" style="border-color:rgba(0,212,255,.3)">
-        <div class="fn-label">microcontroller</div>
-        <div class="fn-name" style="color:var(--glow)">ESP32</div>
-        <div class="fn-ip">192.168.x.88</div>
-      </div>
-      <div class="flow-wire" style="background:rgba(0,212,255,.3)">
-        <div class="packet" style="background:var(--glow);color:#000;animation-delay:.4s">JSON</div>
-        <div class="packet packet2" style="background:var(--glow);color:#000;animation-delay:1.5s">POST</div>
-      </div>
-      <div class="flow-node" style="border-color:rgba(255,107,53,.3)">
-        <div class="fn-label">backend</div>
-        <div class="fn-name" style="color:var(--orange)">Express</div>
-        <div class="fn-ip">:5000</div>
-      </div>
-      <div class="flow-wire" style="background:rgba(168,85,247,.3)">
-        <div class="packet" style="background:var(--purple);color:#fff;animation-delay:.8s">SAVE</div>
-        <div class="packet packet2" style="background:var(--purple);color:#fff;animation-delay:1.9s">SAVE</div>
-      </div>
-      <div class="flow-node" style="border-color:rgba(168,85,247,.3)">
-        <div class="fn-label">database</div>
-        <div class="fn-name" style="color:var(--purple)">MongoDB</div>
-        <div class="fn-ip">Atlas Cloud</div>
-      </div>
-      <div class="flow-wire" style="background:rgba(0,212,255,.2)">
-        <div class="packet" style="background:#0088ff;color:#fff;animation-delay:1.2s">GET</div>
-        <div class="packet packet2" style="background:#0088ff;color:#fff;animation-delay:2.3s">GET</div>
-      </div>
-      <div class="flow-node" style="border-color:rgba(0,212,255,.3)">
-        <div class="fn-label">frontend</div>
-        <div class="fn-name" style="color:var(--glow)">React</div>
-        <div class="fn-ip">:5173</div>
-      </div>
-    </div>
-  </div>
-  <p style="font-size:12px;color:var(--muted);font-family:var(--font-mono);text-align:center">ESP32 sends JSON via HTTP POST every 10s → Express saves to Atlas → React polls every 5s → Charts update live</p>
-</section>
-
-<div class="divider"></div>
-
-<!-- FEATURES -->
-<section class="fade-up d3">
-  <div class="sec-label">Features</div>
-  <div class="sec-title">What you get</div>
-  <div class="cards">
-    <div class="card c-green fade-up d2">
-      <div class="card-icon">📡</div>
-      <div class="card-title">Live KPI Cards</div>
-      <div class="card-desc">Temperature, Humidity, Heat Index and Session Uptime — all updating in real-time with animated progress bars.</div>
-    </div>
-    <div class="card c-blue fade-up d3">
-      <div class="card-icon">📈</div>
-      <div class="card-title">Real-Time Charts</div>
-      <div class="card-desc">Area + line chart with dual Y-axis showing Temperature, Humidity and Heat Index history. Auto-refreshes every 5 seconds.</div>
-    </div>
-    <div class="card c-orange fade-up d4">
-      <div class="card-icon">🌡️</div>
-      <div class="card-title">Comfort Gauge</div>
-      <div class="card-desc">Semi-circle gauge showing Cold / Comfort / Warm / Hot zones based on live temperature reading.</div>
-    </div>
-    <div class="card c-purple fade-up d5">
-      <div class="card-icon">⚠️</div>
-      <div class="card-title">Auto Alerts</div>
-      <div class="card-desc">Automatic threshold alerts for high temp (&gt;38°C), low temp (&lt;10°C), high humidity (&gt;80%) and heat index spikes.</div>
-    </div>
-    <div class="card c-green fade-up d3">
-      <div class="card-icon">📊</div>
-      <div class="card-title">Distribution Chart</div>
-      <div class="card-desc">Color-coded bar chart showing how often temperature falls in each range across all stored readings.</div>
-    </div>
-    <div class="card c-blue fade-up d4">
-      <div class="card-icon">📋</div>
-      <div class="card-title">Readings Table</div>
-      <div class="card-desc">Scrollable table of the last 20 readings with color-coded temperature values and timestamps.</div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CIRCUIT WIRING -->
-<section class="fade-up d3">
-  <div class="sec-label">Hardware</div>
-  <div class="sec-title">Circuit wiring</div>
-  <div class="circuit">
-    <div style="font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px">DHT11 → ESP32 pin mapping</div>
-    <div class="pin-row">
-      <div class="pin-dht">VCC</div>
-      <div class="pin-arrow">────────────</div>
-      <div class="pin-esp pin-33">3.3V</div>
-    </div>
-    <div class="pin-row">
-      <div class="pin-dht">DATA</div>
-      <div class="pin-arrow">────────────</div>
-      <div class="pin-esp pin-gpio">GPIO 4</div>
-    </div>
-    <div class="pin-row">
-      <div class="pin-dht">GND</div>
-      <div class="pin-arrow">────────────</div>
-      <div class="pin-esp pin-gnd">GND</div>
-    </div>
-    <div class="resistor-note">
-      ⚡ Add a <strong>10kΩ pull-up resistor</strong> between the VCC and DATA pins of the DHT11. Without it the readings will fail or be unstable.
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FILE STRUCTURE -->
-<section class="fade-up d3">
-  <div class="sec-label">Project</div>
-  <div class="sec-title">File structure</div>
-  <div class="code-wrap">
-    <div class="code-bar">
-      <div class="code-dots"><span style="background:#ff5f57"></span><span style="background:#ffbd2e"></span><span style="background:#28c840"></span></div>
-      <span class="code-lang">project tree</span>
-    </div>
-    <pre>iot-dashboard/
-├── <span class="p">arduino/</span>
-│   └── <span class="s">esp32_dht11.ino</span>        <span class="c">← Flash this to your ESP32</span>
-├── <span class="p">backend/</span>
-│   ├── <span class="n">.env</span>                   <span class="c">← MongoDB URI + PORT</span>
-│   ├── <span class="s">package.json</span>
-│   └── <span class="s">server.js</span>              <span class="c">← Express + Mongoose API</span>
-└── <span class="p">frontend/</span>
-    ├── <span class="s">index.html</span>
-    ├── <span class="s">package.json</span>
-    ├── <span class="s">vite.config.js</span>
-    └── <span class="p">src/</span>
-        ├── <span class="s">App.jsx</span>                <span class="c">← Polling logic (5s interval)</span>
-        ├── <span class="s">index.css</span>              <span class="c">← Global dark theme</span>
-        ├── <span class="s">main.jsx</span>
-        └── <span class="p">components/</span>
-            ├── <span class="s">Dashboard.jsx</span>
-            ├── <span class="s">Header.jsx</span>
-            ├── <span class="s">KpiCard.jsx</span>
-            ├── <span class="s">LiveLineChart.jsx</span>
-            ├── <span class="s">GaugeChart.jsx</span>
-            ├── <span class="s">DistributionChart.jsx</span>
-            ├── <span class="s">StatsPanel.jsx</span>
-            ├── <span class="s">AlertsPanel.jsx</span>
-            ├── <span class="s">ReadingsTable.jsx</span>
-            └── <span class="s">StatusBar.jsx</span></pre>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- SETUP STEPS -->
-<section class="fade-up d3">
-  <div class="sec-label">Setup Guide</div>
-  <div class="sec-title">Step-by-step installation</div>
-  <div class="steps">
-
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-body">
-        <div class="step-title">Reset MongoDB Atlas password</div>
-        <div class="step-desc">Go to <a href="https://cloud.mongodb.com" target="_blank">cloud.mongodb.com</a> → Database Access → Edit your user → set a new password (letters + numbers only, no special chars). Then go to Network Access → Add IP Address → Allow Access From Anywhere (0.0.0.0/0) → Confirm.</div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-body">
-        <div class="step-title">Configure backend .env</div>
-        <div class="step-desc">Edit <code style="color:var(--orange)">backend/.env</code> and replace YOUR_NEW_PASSWORD:</div>
-        <div class="code-wrap" style="margin-top:8px">
-          <div class="code-bar"><div class="code-dots"><span style="background:#ff5f57"></span><span style="background:#ffbd2e"></span><span style="background:#28c840"></span></div><span class="code-lang">.env</span></div>
-          <pre><span class="n">MONGO_URI</span>=<span class="s">mongodb+srv://subhralovesmom123:YOURNEWPASSWORD@cluster0.mpmae1f.mongodb.net/iotdb?appName=Cluster0</span>
-
-<span class="n">PORT</span>=<span class="s">5000</span></pre>
-</div>
-</div>
-</div>
-
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-body">
-        <div class="step-title">Start the backend (Terminal 1)</div>
-        <div class="code-wrap" style="margin-top:8px">
-          <div class="code-bar"><div class="code-dots"><span style="background:#ff5f57"></span><span style="background:#ffbd2e"></span><span style="background:#28c840"></span></div><span class="code-lang">terminal</span></div>
-          <pre><span class="k">cd</span> iot-dashboard/backend
-
-<span class="k">npm</span> install
-<span class="k">npm</span> run dev
-<span class="c"># ✅ MongoDB Atlas connected</span>
-<span class="c"># 🚀 Server running on http://localhost:5000</span></pre>
-</div>
-</div>
-</div>
-
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-body">
-        <div class="step-title">Start the frontend (Terminal 2)</div>
-        <div class="code-wrap" style="margin-top:8px">
-          <div class="code-bar"><div class="code-dots"><span style="background:#ff5f57"></span><span style="background:#ffbd2e"></span><span style="background:#28c840"></span></div><span class="code-lang">terminal</span></div>
-          <pre><span class="k">cd</span> iot-dashboard/frontend
-
-<span class="k">npm</span> install
-<span class="k">npm</span> run dev
-<span class="c"># Open http://localhost:5173 in your browser</span></pre>
-</div>
-</div>
-</div>
-
-    <div class="step">
-      <div class="step-num">05</div>
-      <div class="step-body">
-        <div class="step-title">Find your PC's local IP address</div>
-        <div class="code-wrap" style="margin-top:8px">
-          <div class="code-bar"><div class="code-dots"><span style="background:#ff5f57"></span><span style="background:#ffbd2e"></span><span style="background:#28c840"></span></div><span class="code-lang">terminal</span></div>
-          <pre><span class="c"># Windows</span>
-
-<span class="k">ipconfig</span>
-<span class="c"># Look for: IPv4 Address . . . 192.168.x.x</span>
-
-<span class="c"># Linux / Mac</span>
-<span class="k">ip addr show</span> | grep <span class="s">"inet "</span></pre>
-</div>
-</div>
-</div>
-
-    <div class="step">
-      <div class="step-num">06</div>
-      <div class="step-body">
-        <div class="step-title">Install Arduino IDE libraries</div>
-        <div class="step-desc">In Arduino IDE → Tools → Manage Libraries, install:<br/>
-        • <strong style="color:#fff">DHT sensor library</strong> by Adafruit<br/>
-        • <strong style="color:#fff">ArduinoJson</strong> by Benoit Blanchon<br/><br/>
-        Board URL for ESP32: <code style="color:var(--green);font-size:11px">https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json</code></div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-num">07</div>
-      <div class="step-body">
-        <div class="step-title">Edit and flash the Arduino sketch</div>
-        <div class="step-desc" style="margin-bottom:8px">Open <code style="color:var(--orange)">arduino/esp32_dht11.ino</code> and fill in these 3 lines:</div>
-        <div class="code-wrap">
-          <div class="code-bar"><div class="code-dots"><span style="background:#ff5f57"></span><span style="background:#ffbd2e"></span><span style="background:#28c840"></span></div><span class="code-lang">arduino c++</span></div>
-          <pre><span class="k">const char*</span> ssid      = <span class="s">"YOUR_WIFI_NAME"</span>;
-
-<span class="k">const char*</span> password = <span class="s">"YOUR_WIFI_PASSWORD"</span>;
-<span class="k">const char*</span> serverURL = <span class="s">"http://192.168.1.105:5000/api/sensor"</span>; <span class="c">// your PC IP</span></pre>
-</div>
-<div class="step-desc" style="margin-top:8px">Then: Tools → Board → <strong style="color:#fff">DOIT ESP32 DEVKIT V1</strong> → select COM port → Upload</div>
-</div>
-</div>
-
-    <div class="step">
-      <div class="step-num">08</div>
-      <div class="step-body">
-        <div class="step-title">Verify in Serial Monitor</div>
-        <div class="code-wrap" style="margin-top:8px">
-          <div class="code-bar"><div class="code-dots"><span style="background:#ff5f57"></span><span style="background:#ffbd2e"></span><span style="background:#28c840"></span></div><span class="code-lang">serial monitor @ 115200</span></div>
-          <pre><span class="c">Connecting to WiFi......</span>
-
-<span class="p">Connected! IP: 192.168.1.88</span>
-<span class="s">Temp: 28.5°C Humidity: 62.0% HeatIdx: 29.1°C</span>
-<span class="n">HTTP Status: 201</span> <span class="c">← data saved successfully</span></pre>
-</div>
-</div>
-</div>
-
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- API ENDPOINTS -->
-<section class="fade-up d4">
-  <div class="sec-label">API Reference</div>
-  <div class="sec-title">Backend endpoints</div>
-  <div class="endpoint"><span class="method post">POST</span><span class="ep-path">/api/sensor</span><span class="ep-desc">ESP32 sends data here every 10s</span></div>
-  <div class="endpoint"><span class="method get">GET</span><span class="ep-path">/api/sensor/latest</span><span class="ep-desc">Most recent single reading</span></div>
-  <div class="endpoint"><span class="method get">GET</span><span class="ep-path">/api/sensor/history?limit=60</span><span class="ep-desc">Chart data oldest → newest</span></div>
-  <div class="endpoint"><span class="method get">GET</span><span class="ep-path">/api/sensor/stats</span><span class="ep-desc">Min / max / avg aggregations</span></div>
-  <div class="endpoint"><span class="method get">GET</span><span class="ep-path">/api/sensor/readings?limit=20</span><span class="ep-desc">Table data newest first</span></div>
-</section>
-
-<div class="divider"></div>
-
-<!-- SERIAL MONITOR CODES -->
-<section class="fade-up d4">
-  <div class="sec-label">Debugging</div>
-  <div class="sec-title">Serial Monitor messages</div>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Message</th><th>Meaning</th><th>Status</th></tr></thead>
-      <tbody>
-        <tr><td>Connected! IP: 192.168.x.x</td><td>WiFi connected successfully</td><td class="td-green">✓ Good</td></tr>
-        <tr><td>Temp: 28.5°C Humidity: 62.0%</td><td>DHT11 reading correctly</td><td class="td-green">✓ Good</td></tr>
-        <tr><td>HTTP Status: 201</td><td>Data saved to MongoDB</td><td class="td-green">✓ Good</td></tr>
-        <tr><td>HTTP Status: -1</td><td>Can't reach backend — wrong IP or backend not running</td><td class="td-red">✗ Fix IP</td></tr>
-        <tr><td>DHT11 read failed!</td><td>Sensor wiring problem</td><td class="td-orange">⚠ Check wiring</td></tr>
-        <tr><td>Connecting to WiFi......</td><td>Stuck — wrong SSID or password</td><td class="td-orange">⚠ Check credentials</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- TROUBLESHOOTING -->
-<section class="fade-up d4">
-  <div class="sec-label">Troubleshooting</div>
-  <div class="sec-title">Common problems & fixes</div>
-
-  <div class="trouble-item">
-    <div class="trouble-icon">🔴</div>
-    <div>
-      <div class="trouble-prob">MongoDB connection error / IP not whitelisted</div>
-      <div class="trouble-fix">Go to Atlas → Network Access → Add IP Address → <code>Allow Access From Anywhere (0.0.0.0/0)</code> → Confirm. Wait 30 seconds then type <code>rs</code> in backend terminal.</div>
-    </div>
-  </div>
-
-  <div class="trouble-item">
-    <div class="trouble-icon">🔴</div>
-    <div>
-      <div class="trouble-prob">HTTP Status: -1 in Serial Monitor</div>
-      <div class="trouble-fix">Your PC's IP changed. Run <code>ipconfig</code> again, update the IP in the Arduino sketch, and re-upload. Make sure your backend is running.</div>
-    </div>
-  </div>
-
-  <div class="trouble-item">
-    <div class="trouble-icon">🟡</div>
-    <div>
-      <div class="trouble-prob">Dashboard shows OFFLINE</div>
-      <div class="trouble-fix">Backend is not running. Open a terminal, <code>cd backend</code>, run <code>npm run dev</code>. Both terminals must be open at the same time.</div>
-    </div>
-  </div>
-
-  <div class="trouble-item">
-    <div class="trouble-icon">🟡</div>
-    <div>
-      <div class="trouble-prob">DHT11 read failed / NaN values</div>
-      <div class="trouble-fix">Check your wiring. Make sure the 10kΩ pull-up resistor is connected between VCC and DATA. Try a different GPIO pin and update <code>#define DHTPIN</code>.</div>
-    </div>
-  </div>
-
-  <div class="trouble-item">
-    <div class="trouble-icon">🟡</div>
-    <div>
-      <div class="trouble-prob">ECONNREFUSED error in Vite terminal</div>
-      <div class="trouble-fix">The frontend proxy can't find the backend. Start backend first: <code>cd backend && npm run dev</code>. Both servers must be running simultaneously.</div>
-    </div>
-  </div>
-
-  <div class="trouble-item">
-    <div class="trouble-icon">🔵</div>
-    <div>
-      <div class="trouble-prob">Blue LED is ON on ESP32</div>
-      <div class="trouble-fix">This is normal and correct! It means WiFi is connected. The code sets <code>GPIO2 HIGH</code> after a successful WiFi connection.</div>
-    </div>
-  </div>
-
-</section>
-
-<div class="divider"></div>
-
-<!-- TECH STACK -->
-<section class="fade-up d4">
-  <div class="sec-label">Stack</div>
-  <div class="sec-title">Technologies used</div>
-  <div class="tbl-wrap">
-    <table>
-      <thead><tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr></thead>
-      <tbody>
-        <tr><td>Hardware</td><td class="td-green">ESP32 + DHT11</td><td>Reads temperature & humidity, sends over WiFi</td></tr>
-        <tr><td>Firmware</td><td class="td-orange">Arduino C++ (HTTPClient + ArduinoJson)</td><td>Packages and POSTs sensor data every 10s</td></tr>
-        <tr><td>Backend</td><td class="td-orange">Node.js + Express</td><td>REST API receiving and serving sensor data</td></tr>
-        <tr><td>ORM</td><td class="td-green">Mongoose</td><td>Schema validation and MongoDB queries</td></tr>
-        <tr><td>Database</td><td class="td-green">MongoDB Atlas</td><td>Cloud storage for all sensor readings</td></tr>
-        <tr><td>Frontend</td><td class="td-green">React 18 + Vite</td><td>Fast dev server, component-based UI</td></tr>
-        <tr><td>Charts</td><td class="td-green">Recharts</td><td>Line, area, bar, gauge charts</td></tr>
-        <tr><td>HTTP Client</td><td class="td-green">Axios</td><td>Frontend polling every 5s</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-</div><!-- /wrap -->
-
-<footer>
-  <div class="wrap">
-    <div class="footer-logo">⬡ IoT DASHBOARD</div>
-    <div class="footer-sub">ESP32 · DHT11 · MongoDB Atlas · React Vite · Built with ❤️</div>
-  </div>
-</footer>
-
-<script>
-// Intersection observer for fade-up animations on scroll
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.animationPlayState = 'running';
-      e.target.style.opacity = '1';
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.fade-up').forEach(el => {
-  el.style.animationPlayState = 'paused';
-  obs.observe(el);
+/* Each ring at different speed + direction */
+.loader-ring:nth-child(1) { animation-duration: 3s; }
+.loader-ring:nth-child(2) { animation-duration: 2s; animation-direction: reverse; }
+.loader-ring:nth-child(3) { animation-duration: 1.5s; }
+
+/* Sweep bar — CSS-only shimmer */
+@keyframes barSweep {
+  from { left: -100%; }
+  to   { left:  100%; }
+}
+```
+
+```javascript
+// Hides after fonts + DOM are ready
+window.addEventListener('load', () => {
+  setTimeout(() => document.getElementById('loader').classList.add('hidden'), 2600);
 });
-</script>
-</body>
-</html>
+```
+
+---
+
+### 2. &nbsp; Real-Time Clock Hands (Smooth Sweep)
+
+Unlike a standard 1-second tick, this clock updates every **50ms** using `Date.getMilliseconds()` to interpolate between seconds — producing a perfectly smooth, continuous sweep.
+
+```
+  Standard tick:   ──┐  ──┐  ──┐  (steps)
+  CHRONOS sweep:   ─────────────  (fluid)
+```
+
+```javascript
+function updateClocks() {
+  const now = new Date();
+  const h  = now.getHours() % 12;
+  const m  = now.getMinutes();
+  const s  = now.getSeconds();
+  const ms = now.getMilliseconds();
+
+  // KEY: add the fractional millisecond to each unit
+  const sSmooth = s  + ms / 1000;     // e.g. 34.726 seconds
+  const mSmooth = m  + sSmooth / 60;  // e.g. 22.579 minutes
+  const hSmooth = h  + mSmooth / 60;  // e.g.  7.376 hours
+
+  const hDeg = hSmooth / 12 * 360;   // 0–360
+  const mDeg = mSmooth / 60 * 360;
+  const sDeg = sSmooth / 60 * 360;
+
+  document.getElementById('hourHand').style.transform   = `rotate(${hDeg}deg)`;
+  document.getElementById('minuteHand').style.transform = `rotate(${mDeg}deg)`;
+  document.getElementById('secondHand').style.transform = `rotate(${sDeg}deg)`;
+}
+
+setInterval(updateClocks, 50); // 50ms = imperceptibly smooth
+```
+
+---
+
+### 3. &nbsp; Star Field (110 Particles)
+
+Each star is an absolutely positioned `<div>` injected by JavaScript with randomised size, position, animation duration, and delay. The `twinkle` keyframe scales and fades each star independently.
+
+```css
+@keyframes twinkle {
+  0%,  100% { opacity: 0.06; transform: scale(1);   }
+  50%       { opacity: 0.5;  transform: scale(1.6); }
+}
+```
+
+```javascript
+for (let i = 0; i < 110; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 2 + 0.4;
+  star.style.cssText = `
+    width:             ${size}px;
+    height:            ${size}px;
+    left:              ${Math.random() * 100}%;
+    top:               ${Math.random() * 100}%;
+    animation-duration:${Math.random() * 4 + 2}s;
+    animation-delay:   ${Math.random() * 6}s;
+    opacity:           ${Math.random() * 0.3 + 0.06};
+  `;
+  container.appendChild(star);
+}
+```
+
+---
+
+### 4. &nbsp; Rotating Rings with Tick Marks
+
+Five concentric `<div>` rings rotate at different speeds and directions using the same `spin` keyframe. Sixty tick marks are injected into the outermost ring via JS — alternating major (5-minute) and minor (1-minute) marks.
+
+```
+  Ring 1: 130s  clockwise        ←  outermost, slowest
+  Ring 2:  95s  counter-clockwise
+  Ring 3:  65s  clockwise
+  Ring 4:  40s  counter-clockwise
+  Ring 5:  25s  clockwise        ←  innermost, fastest
+```
+
+```javascript
+// Build 60 tick marks
+for (let i = 0; i < 60; i++) {
+  const tick = document.createElement('div');
+  tick.className = 'tick ' + (i % 5 === 0 ? 'major' : 'minor');
+  tick.style.transform = `rotate(${i * 6}deg)`; // 360 / 60 = 6deg per mark
+  ringEl.appendChild(tick);
+}
+```
+
+```css
+.tick.major { width: 2px; height: 14px; opacity: 0.5; }
+.tick.minor { width: 1px; height: 7px;  opacity: 0.2; }
+```
+
+---
+
+### 5. &nbsp; Scroll-Driven Ring Parallax
+
+On every `scroll` event, each ring receives an additional `rotate()` transform proportional to `window.scrollY`. Each ring uses a different speed multiplier — creating a depth illusion as you scroll.
+
+```javascript
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.ring').forEach((ring, index) => {
+    const speed = (index + 1) * 0.04; // 0.04, 0.08, 0.12, 0.16, 0.20
+    ring.style.transform = `rotate(${window.scrollY * speed}deg)`;
+  });
+}, { passive: true }); // passive: true = no scroll jank
+```
+
+```
+  scroll 100px →  ring 1 rotates   4deg
+                  ring 2 rotates   8deg
+                  ring 3 rotates  12deg
+                  ring 4 rotates  16deg
+                  ring 5 rotates  20deg
+```
+
+---
+
+### 6. &nbsp; Custom Cursor with Lagging Ring
+
+The cursor is split into two elements: a small dot that follows the mouse exactly, and a larger ring that follows with inertia — creating a smooth lag effect using linear interpolation (`lerp`).
+
+```javascript
+let mx=0, my=0, rx=0, ry=0;
+
+// Dot: instant
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  dot.style.left = mx + 'px';
+  dot.style.top  = my + 'px';
+});
+
+// Ring: lerp toward dot position each frame
+(function animateRing() {
+  rx += (mx - rx) * 0.11; // 0.11 = lerp factor (lower = more lag)
+  ry += (my - ry) * 0.11;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animateRing);
+})();
+
+// Expand on interactive elements
+interactiveEls.forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('expand'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('expand'));
+});
+```
+
+---
+
+### 7. &nbsp; Scroll Progress Bar
+
+A `1px` fixed bar at the very top of the viewport. Its width is a percentage of how far the user has scrolled through the total document height.
+
+```javascript
+window.addEventListener('scroll', () => {
+  const scrolled    = window.scrollY;
+  const totalHeight = document.body.scrollHeight - window.innerHeight;
+  const pct         = (scrolled / totalHeight) * 100;
+
+  document.getElementById('scroll-prog').style.width = pct + '%';
+}, { passive: true });
+```
+
+```css
+#scroll-prog {
+  position: fixed; top: 0; left: 0;
+  height: 1px; width: 0%;
+  background: linear-gradient(to right, var(--copper), var(--gold), var(--gold-light));
+  box-shadow: 0 0 6px rgba(201,168,76,0.5);
+  transition: width 0.1s linear;
+  z-index: 999;
+}
+```
+
+---
+
+### 8. &nbsp; Mouse-Tracking Bento Glow
+
+Each feature card tracks mouse position as CSS custom properties (`--mx`, `--my`). These drive a `radial-gradient` that follows the cursor, creating a torch-light effect.
+
+```javascript
+card.addEventListener('mousemove', e => {
+  const rect = card.getBoundingClientRect();
+  const x = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1);
+  const y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1);
+  card.style.setProperty('--mx', x + '%');
+  card.style.setProperty('--my', y + '%');
+});
+```
+
+```css
+.bento-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(201,168,76, 0.06),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.bento-card:hover::before { opacity: 1; }
+```
+
+---
+
+### 9. &nbsp; Count-Up Statistics
+
+Numbers count from `0` to their target when they enter the viewport. Uses `IntersectionObserver` (fires once) + `setInterval` for the animation loop. Large numbers get smart formatting.
+
+```javascript
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    const el     = entry.target;
+    const target = parseInt(el.dataset.target); // e.g. 4700000000
+    let current  = 0;
+    const step   = target / (1800 / 16); // finish in ~1800ms at 60fps
+
+    const format = n => {
+      if (target >= 1_000_000_000) return (n / 1_000_000_000).toFixed(1) + 'B+';
+      if (target >= 1_000)         return Math.floor(n).toLocaleString();
+      return Math.floor(n).toString();
+    };
+
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = format(current);
+      if (current >= target) clearInterval(timer);
+    }, 16);
+
+    observer.unobserve(el); // fire once only
+  });
+}, { threshold: 0.5 });
+```
+
+---
+
+### 10. &nbsp; Staggered Scroll Reveal (3 Directions)
+
+Three reveal classes animate in from different directions. Each uses a single `IntersectionObserver`. Transition delays on siblings create a stagger cascade.
+
+```css
+/* Base state — hidden */
+.reveal   { opacity: 0; transform: translateY(32px); }
+.reveal-l { opacity: 0; transform: translateX(-32px); }
+.reveal-r { opacity: 0; transform: translateX(32px);  }
+
+/* Revealed state */
+.reveal.visible,
+.reveal-l.visible,
+.reveal-r.visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+```
+
+```html
+<!-- Stagger siblings with transition-delay -->
+<h2 class="reveal"                          >Title</h2>
+<p  class="reveal" style="transition-delay:.15s">Body</p>
+<div class="reveal" style="transition-delay:.3s">Card</div>
+```
+
+---
+
+### 11. &nbsp; Draggable Horizontal Timeline
+
+The milestone timeline is a horizontally scrollable track. A mousedown listener captures the start position; mousemove calculates the delta and applies it to `scrollLeft`; mouseup releases.
+
+```javascript
+const track = document.getElementById('htlTrack');
+let isDragging  = false;
+let startX      = 0;
+let scrollStart = 0;
+
+track.addEventListener('mousedown', e => {
+  isDragging  = true;
+  startX      = e.pageX - track.offsetLeft;
+  scrollStart = track.scrollLeft;
+  track.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  const delta = e.pageX - track.offsetLeft - startX;
+  track.scrollLeft = scrollStart - delta;
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  track.style.cursor = 'grab';
+});
+```
+
+```css
+.htl-track {
+  cursor: grab;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* snap to each card */
+  scrollbar-width: none;         /* hide scrollbar */
+}
+.htl-item { scroll-snap-align: start; }
+```
+
+---
+
+### 12. &nbsp; Button Wipe-Fill Animation
+
+Buttons use a `::before` pseudo-element that scales from `scaleX(0)` to `scaleX(1)` on hover — creating a left-to-right fill wipe. The label text sits above it on `z-index: 1`.
+
+```css
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--cream);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+.btn-primary:hover::before { transform: scaleX(1); }
+.btn-primary span           { position: relative; z-index: 1; }
+```
+
+---
+
+### 13. &nbsp; Marquee Tape
+
+The gold marquee band contains a `<div>` with `width: max-content` that animates from `translateX(0)` to `translateX(-50%)`. Content is duplicated (×4) so it loops seamlessly.
+
+```css
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marq 28s linear infinite;
+}
+
+@keyframes marq {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* -50% because content is 2× duplicated */
+}
+```
+
+```javascript
+// Duplicate content 4× for seamless loop
+for (let repeat = 0; repeat < 4; repeat++) {
+  items.forEach(text => {
+    const span = document.createElement('span');
+    span.innerHTML = text + ' <span>✦</span> ';
+    track.appendChild(span);
+  });
+}
+```
+
+---
+
+### 14. &nbsp; Floating Era Labels
+
+Six `<span>` elements positioned absolutely at clock-face compass points. Each fades in with a staggered `animation-delay` after the hero loads.
+
+```css
+.era-label:nth-child(1) { top: 8%;   left: 50%; transform: translateX(-50%); animation-delay: 2.0s; }
+.era-label:nth-child(2) { right: 6%; top: 32%;                                animation-delay: 2.2s; }
+.era-label:nth-child(3) { right: 6%; bottom: 32%;                             animation-delay: 2.4s; }
+.era-label:nth-child(4) { bottom: 8%; left: 50%; transform: translateX(-50%); animation-delay: 2.6s; }
+.era-label:nth-child(5) { left: 6%;  bottom: 32%;                             animation-delay: 2.8s; }
+.era-label:nth-child(6) { left: 6%;  top: 32%;                                animation-delay: 3.0s; }
+
+@keyframes fadeIn { to { opacity: 1; } }
+```
+
+---
+
+### 15. &nbsp; Scroll-Drop Line Indicator
+
+The hero's scroll cue uses a `scaleY` animation with changing `transform-origin` to create a line that grows downward, then shrinks away from the bottom — simulating a falling droplet.
+
+```css
+@keyframes scrollDrop {
+  0%  { opacity: 0; transform: scaleY(0); transform-origin: top;    }
+  40% { opacity: 1; transform: scaleY(1);                           }
+  80% { opacity: 0; transform: scaleY(1); transform-origin: bottom; }
+  100%{ opacity: 0;                                                  }
+}
+
+.scroll-line {
+  width: 1px; height: 55px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollDrop 2.5s ease-in-out infinite;
+}
+```
+
+---
+
+## 🛠️ &nbsp; Tech Stack
+
+| Layer | Technology | Notes |
+|-------|-----------|-------|
+| Markup | `HTML5` | Semantic elements throughout |
+| Styling | `CSS3` | Custom properties, Grid, Flexbox, `@keyframes` |
+| Scripting | `Vanilla JS` | ES6+, no transpilation needed |
+| Fonts | `Google Fonts` | Cormorant Garamond, Bebas Neue, DM Mono |
+| Icons | `Unicode` | No icon library — `⟳ ◈ ⧖ ✦ ⬡` etc. |
+| Images | `None` | All visuals are pure CSS |
+| Build | `None` | Zero build step — open and run |
+| Dependencies | `0` | Literally zero |
+
+---
+
+## 📁 &nbsp; Project Structure
+
+```
+chronos-time-machine/
+│
+├── index.html          ← Entire site (markup + styles + scripts)
+├── README.md           ← This file
+└── LICENSE             ← MIT License
+```
+
+> **Why one file?** Intentional. Zero build complexity, trivial deployment, and a demonstration that great things don't require scaffolding.
+
+---
+
+## 🚀 &nbsp; Getting Started
+
+### Prerequisites
+
+```
+A web browser.
+That's it.
+```
+
+### Run Locally
+
+```bash
+# 1. Clone
+git clone https://github.com/your-username/chronos-time-machine.git
+cd chronos-time-machine
+
+# 2a. Just open it
+open index.html
+
+# 2b. Or serve (for font loading from Google Fonts)
+npx serve .
+# → http://localhost:3000
+
+# 2c. Python alternative
+python -m http.server 8000
+# → http://localhost:8000
+```
+
+> **Note:** Google Fonts requires a server context to load (CORS). For purely offline use, download the fonts and update the `@import` URL.
+
+---
+
+## ☁️ &nbsp; Deployment
+
+Zero configuration on all platforms:
+
+```bash
+# ── Vercel ──────────────────────────────────────
+vercel --prod
+
+# ── Netlify ─────────────────────────────────────
+# Drag & drop index.html at: netlify.com/drop
+
+# ── GitHub Pages ────────────────────────────────
+# Repo → Settings → Pages → Deploy from: main /root
+
+# ── Cloudflare Pages ────────────────────────────
+# Connect repo → Framework: None → Build command: (empty)
+
+# ── Surge.sh ────────────────────────────────────
+npx surge . your-subdomain.surge.sh
+```
+
+---
+
+## 🗺️ &nbsp; Sections Overview
+
+| # | Section | Layout | Key Feature |
+|---|---------|--------|-------------|
+| 1 | **Hero** | Full viewport | 5 rotating rings + real-time clock + star field |
+| 2 | **Marquee Band** | Full-width strip | Gold scrolling tape |
+| 3 | **Stats Row** | 4-column grid | Count-up animation on scroll |
+| 4 | **About** | 50/50 split | Decorative clock rings + spec list |
+| 5 | **Features** | Bento grid | Mouse-tracking radial glow per card |
+| 6 | **Horiz. Timeline** | Drag-scroll | Draggable horizontal milestone track |
+| 7 | **Vert. Timeline** | Left-border | Dot fills on hover, staggered reveal |
+| 8 | **Quote** | Centered | Oversized decorative quote mark |
+| 9 | **Destinations** | `2fr 1fr 1fr` | Asymmetric grid, arrow reveals |
+| 10 | **Testimonials** | 2×2 grid | Star ratings, avatar initials |
+| 11 | **Booking** | 50/50 split | 6-field form + guarantee badges |
+| 12 | **Footer** | 4-column | Social links + legal |
+| — | **Ticker** | Fixed bottom | Live news feed |
+| — | **Live Clock** | Fixed corner | Real-time date + time |
+| — | **Scroll Bar** | Fixed top | Gold progress indicator |
+
+---
+
+## 🎨 &nbsp; Design System
+
+### Color Palette
+
+| Variable | Hex | Usage |
+|----------|-----|-------|
+| `--gold` | `#c9a84c` | Primary accent — all highlights, borders, hands |
+| `--gold-light` | `#e8d08a` | Hover states, hand tip gradients |
+| `--copper` | `#8b4a1c` | Timeline years, gradient terminus |
+| `--cream` | `#f5f0e8` | Primary text, headings |
+| `--dark` | `#0a0806` | Base background |
+| `--dark2` | `#100d08` | Cards, secondary sections |
+| `--dark3` | `#1a150e` | Hover card states |
+| `--dark4` | `#221a10` | Deepest layer |
+| `--text-dim` | `#7a6a52` | Body text, descriptions |
+| `--text-mid` | `#a08860` | Mid-level text |
+| `--red` | `#c0392b` | Second hand accent |
+
+### Typography
+
+```
+┌─────────────────────────────────────────────────────┐
+│  Bebas Neue          — DISPLAY HEADINGS · NUMBERS   │
+│  Cormorant Garamond  — Body text, italic prose      │
+│  DM Mono             — Labels, tags, UI chrome      │
+└─────────────────────────────────────────────────────┘
+```
+
+### Spacing Scale
+
+```css
+/* Sections */    padding: 8rem 5rem;
+/* Cards */       padding: 3.5rem;
+/* Grid gaps */   gap: 1px;                /* border-as-gap pattern */
+/* Nav */         padding: 1.8rem 5rem;
+```
+
+### Border Color System
+
+```css
+/* The further from primary, the more transparent */
+rgba(201,168,76, 0.08)  /* subtle dividers */
+rgba(201,168,76, 0.15)  /* card borders */
+rgba(201,168,76, 0.25)  /* form inputs */
+rgba(201,168,76, 0.45)  /* hover states */
+rgba(201,168,76, 1.00)  /* active / focused */
+```
+
+---
+
+## 🔧 &nbsp; Customization Guide
+
+### Change Brand Name
+Search and replace `CHRONOS` throughout `index.html`.
+
+### Change Accent Color
+
+```css
+/* In :root — one change updates everything */
+:root {
+  --gold: #c9a84c; /* ← your new accent color */
+}
+```
+
+### Add a Destination Card
+
+```html
+<div class="dest-card" data-year="YOUR_YEAR">
+  <div class="dest-era">Era · Year</div>
+  <div class="dest-name">Place<br>Name</div>
+  <p class="dest-desc">Description of the expedition.</p>
+  <div class="dest-tags">
+    <span class="dest-tag">Tag 1</span>
+    <span class="dest-tag">Tag 2</span>
+  </div>
+  <div class="dest-arrow">→</div>
+</div>
+```
+
+### Add a Timeline Entry
+
+```html
+<div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="tl-year">YEAR</div>
+  <div class="tl-title">Event Title</div>
+  <p class="tl-desc">What happened here.</p>
+</div>
+```
+
+### Adjust Animation Speeds
+
+```css
+/* Rings */
+.ring:nth-child(1) { animation-duration: 130s; } /* slower = more elegant */
+
+/* Marquee */
+.marquee-track { animation: marq 28s linear infinite; } /* higher = slower */
+
+/* Cursor lag — in JS */
+rx += (mx - rx) * 0.11; /* lower = more lag (0.05 is very dreamy) */
+```
+
+---
+
+## 🌐 &nbsp; Browser Support
+
+| Browser | Version | Status |
+|---------|---------|--------|
+| Chrome | 90+ | ✅ Full support |
+| Firefox | 88+ | ✅ Full support |
+| Safari | 14+ | ✅ Full support |
+| Edge | 90+ | ✅ Full support |
+| Opera | 76+ | ✅ Full support |
+| IE | Any | ❌ Not supported |
+
+**Required browser features:**
+
+```
+CSS Custom Properties      →  color theming
+CSS Grid & Flexbox         →  all layouts
+CSS Animations & Keyframes →  all motion
+IntersectionObserver API   →  scroll reveals, count-up
+requestAnimationFrame      →  cursor lag
+backdrop-filter            →  nav blur (graceful degradation)
+```
+
+---
+
+## ⚡ &nbsp; Performance
+
+| Metric | Value | Notes |
+|--------|-------|-------|
+| HTTP requests | **1** | Single HTML file |
+| External JS | **0** | Zero JS dependencies |
+| Images | **0** | All visuals are CSS |
+| Font requests | **1** | All 3 fonts in one Google Fonts call |
+| Total lines | **~1,500** | HTML + CSS + JS |
+| Time to interactive | **< 1s** | On fast connection |
+| Build step | **None** | Open and run |
+
+---
+
+## 🤝 &nbsp; Contributing
+
+Contributions, issues and feature requests are welcome.
+
+```bash
+# Fork → Clone → Branch → Change → PR
+
+git checkout -b feature/your-feature-name
+git commit -m "Add: your feature description"
+git push origin feature/your-feature-name
+# → Open a Pull Request
+```
+
+**Ideas welcome:**
+- New destination cards
+- Additional animation systems
+- Mobile responsiveness improvements
+- Dark/light mode toggle
+- CSS-only version (no JS)
+
+---
+
+## 📜 &nbsp; License
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more information.
+
+---
+
+## 🙏 &nbsp; Acknowledgements
+
+- Aesthetic inspired by Swiss **haute horlogerie** — Patek Philippe, Vacheron Constantin, A. Lange & Söhne
+- Typography via [Google Fonts](https://fonts.google.com) — Cormorant Garamond, Bebas Neue, DM Mono
+- Concept drawn from H.G. Wells' *The Time Machine* (1895)
+- Grain texture via inline SVG `feTurbulence` filter
+
+---
+
+<div align="center">
+
+```
+  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·
+              ⟳   Every second is a destination.   ⟳
+  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·
+```
+
+**CHRONOS** &nbsp;·&nbsp; Est. MMXXVI &nbsp;·&nbsp; Temporal Navigation Co.
+
+*Made with obsessive attention to detail and zero dependencies.*
+
+&nbsp;
+
+[![Back to Top](https://img.shields.io/badge/↑-Back%20to%20Top-c9a84c?style=flat-square&labelColor=0a0806)](#-chronos--time-machine)
+
+</div>
